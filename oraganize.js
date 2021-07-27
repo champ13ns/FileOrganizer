@@ -17,7 +17,7 @@ function fn(src){
     // console.log(dp1);
     // console.log(dp2);
     // console.log(dp3);
-    // console.log(dp4);
+    console.log(dp4);
     // console.log(dp5);
     if(!fs.existsSync(dp1)){
     fs.mkdirSync(dp1);
