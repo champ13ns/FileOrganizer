@@ -7,11 +7,13 @@ function fn(src){
     let a3=new Array;
     let a4=new Array;
     let a5=new Array;
-    let dp1=path.join(src,"Media");
-    let dp2=path.join(src,"Documents");
-    let dp3=path.join(src,"Archives");
-    let dp4=path.join(src,"App");
-    let dp5=path.join(src,"Others");
+    let op1=path.join(src,"Organized");
+    fs.mkdirSync(op1);
+    let dp1=path.join(op1,"Media");
+    let dp2=path.join(op1,"Documents");
+    let dp3=path.join(op1,"Archives");
+    let dp4=path.join(op1,"App");
+    let dp5=path.join(op1,"Others");
     // console.log(dp1);
     // console.log(dp2);
     // console.log(dp3);
@@ -35,32 +37,32 @@ function fn(src){
      let x=path.extname(np);
      if(x == ".mkv" || x == ".jpg" || x == ".mp4" || x == ".jpeg")
      {
-         let nnp=path.join(src,"Media",arr[i]);
+         let nnp=path.join(src,"Organized","Media",arr[i]);
          let ffs=path.join(src,arr[i]);
          fs.copyFileSync(ffs,nnp);
      }
       else if(x == ".pdf" || x == ".txt")
      {
-           let nnp=path.join(src,"Documents",arr[i]);
+           let nnp=path.join(src,"Organized","Documents",arr[i]);
          let ffs=path.join(src,arr[i]);
          fs.copyFileSync(ffs,nnp);
 
      }
      else if(x == ".zip")
      {
-           let nnp=path.join(src,"Archives",arr[i]);
+           let nnp=path.join(src,"Organized","Archives",arr[i]);
          let ffs=path.join(src,arr[i]);
          fs.copyFileSync(ffs,nnp);
      }
      else if(x == ".exe")
      {
-           let nnp=path.join(src,"App",arr[i]);
+           let nnp=path.join(src,"Organized","App",arr[i]);
          let ffs=path.join(src,arr[i]);
          fs.copyFileSync(ffs,nnp);
      }
      else
     {
-          let nnp=path.join(src,"Others",arr[i]);
+          let nnp=path.join(src,"Organized","Others",arr[i]);
          let ffs=path.join(src,arr[i]);
          fs.copyFileSync(ffs,nnp);
     }
